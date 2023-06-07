@@ -1,0 +1,32 @@
+IMPORT FILES FROM DRIVE INTO GOOGLE-COLAB:
+
+STEP-1: Import Libraries
+
+# Code to read csv file into colaboratory:
+!pip install -U -q PyDrive
+from pydrive.auth import GoogleAuth
+from pydrive.drive import GoogleDrive
+from google.colab import auth
+from oauth2client.client import GoogleCredentials
+
+STEP-2: Autheticate E-Mail ID
+
+auth.authenticate_user()
+gauth = GoogleAuth()
+gauth.credentials = GoogleCredentials.get_application_default()
+drive = GoogleDrive(gauth)
+
+STEP-3: Get File from Drive using file-ID
+
+#2.1 Get the file
+downloaded = drive.CreateFile({'id':'1R9vW5dmox7i8OGOoDql_r9yUrvAJgvhD'}) # replace the id with id of file you want to access
+downloaded.GetContentFile('resources.csv') 
+
+STEP-4: Read File
+
+#3.1 Read file as panda dataframe
+import pandas as pd
+xyz = pd.read_csv('resources.csv') 
+print(xyz.head(1))
+
+#Repeat STEPs 3 & 4 to load as many files as you require.
