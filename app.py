@@ -22,8 +22,8 @@ def predict(features):
     prediction = model.predict(scaled_features)
     return prediction
 
-# Create input fields for the 27 features
-# feature_columns = ['feature' + str(i) for i in range(1, 28)]
+# Create input fields for the 12 features
+# feature_columns = ['feature' + str(i) for i in range(1, 13)]
 feature_columns = [
      'Call Failure','Complains','Subscription  Length','Charge  Amount','Seconds of Use','Frequency of use','Frequency of SMS',	'Distinct Called Numbers','Age Group','Tariff Plan','Status','Customer Value'
 ]
