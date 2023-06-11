@@ -8,7 +8,7 @@ with open('churn.pkl', 'rb') as file:
     model = pickle.load(file)
 
 #Set up the Streamlit app
-st.title('Iranian Churn Predictor')
+st.title('Customer Churn Predicton')
 
 # Function to preprocess and scale the input features
 def preprocess_features(features):
@@ -39,9 +39,9 @@ if st.button('Predict'):
     
     # Convert the prediction to a readable label
     if prediction[0] == 1:
-        result = 'leave service'
+        result = 'Customer will leave the Service'
     else:
-        result = 'continue service'
+        result = 'Customer will continue the Service'
     
     # Display the prediction result
     st.write('Prediction:',result)
