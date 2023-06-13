@@ -45,3 +45,6 @@ if st.button('Predict'):
     
     # Display the prediction result
     st.write('Prediction:',result)
+    # Embedding YouTube video
+video_url = "https://youtu.be/WYDiMGJqd3E"  # Replace with your YouTube video URL or ID
+st.video(video_url)
